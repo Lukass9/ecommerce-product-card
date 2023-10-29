@@ -1,0 +1,11 @@
+:root {
+  --orange: hsl(26, 100%, 55%);
+  --orange-pale: hsl(25, 100%, 94%);
+  --grayish-blue-light-1: hsl(223, 64%, 98%);
+  --grayish-blue-light-2: hsl(220, 14%, 75%);
+  --grayish-blue-dark-1: hsl(219, 9%, 45%);
+  --grayish-blue-dark-2: hsl(220, 13%, 13%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --black-opacity: hsl(0, 0%, 0%, 0.75);
+}
