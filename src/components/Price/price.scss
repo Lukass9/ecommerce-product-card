@@ -1,0 +1,29 @@
+.price-wrapp{
+    display: flex;
+    justify-content: space-between;
+    .price{
+        color: var(--grayish-blue-light-2);
+        font-weight: bold;
+        text-decoration: line-through;
+    }
+    
+    .discount-wrapp{
+        display: flex;
+        gap: 15px;
+        .discount-price{
+            font-size: 25px;
+            font-weight: bold;
+        }  
+        .discount{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--orange-pale);
+            color: var(--orange);
+            padding: 5px;
+            height: 70%;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    }
+}

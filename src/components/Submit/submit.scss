@@ -1,0 +1,19 @@
+button{
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange);
+    border-radius: 10px;
+    padding: 0 20px;
+    border: none;
+    margin: 0;
+    overflow: visible;
+    font-size: 20px;
+    color: var(--white);
+    gap: 15px;
+
+    path{
+        fill: var(--white);
+    }
+}

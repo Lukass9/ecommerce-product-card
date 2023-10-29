@@ -1,7 +1,29 @@
 .carousel{
+    position: relative;
     width: 100vw;
     overflow: hidden;
-}
-.image-wrapp{
-    display: flex;
+
+    .navigation{
+        position: inherit;
+        width:40px;
+        height: 40px;
+        background-color: white;
+        position: absolute;
+        border-radius: 50%;
+        top:calc(50% - 20px);
+        margin: 0 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 25%;
+    }
+    .next{
+        right: 0;
+        background-image: url("src/assets/images/icon-next.svg");
+    }
+    .prev{
+        background-image: url("src/assets/images/icon-previous.svg");
+    }
+    .image-wrapp{
+        display: flex;
+    }
 }
