@@ -4,7 +4,7 @@
     overflow: hidden;
 
     .navigation{
-        position: inherit;
+        position: absolute;
         width:40px;
         height: 40px;
         background-color: white;
@@ -15,15 +15,20 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 25%;
+        z-index: 20;
     }
     .next{
         right: 0;
         background-image: url("src/assets/images/icon-next.svg");
     }
     .prev{
+        left: 0;
         background-image: url("src/assets/images/icon-previous.svg");
     }
+
     .image-wrapp{
         display: flex;
+        transform: translateX(0px);
+        transition: transform .3s ease-in-out;
     }
 }
