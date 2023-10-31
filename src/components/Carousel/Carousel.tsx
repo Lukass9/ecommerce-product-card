@@ -12,10 +12,14 @@ export const Carousel = () => {
   const [width, setWidth] = useState<null | number>(null);
   const [shift, setShift] = useState(0);
 
-  const imgWrappRef = useRef(null);
+  const imgWrappRef = useRef<HTMLDivElement | null>(null);
 
   const handleNextImg = () => {
-    if (width && shift - width > -imgWrappRef.current.scrollWidth)
+    if (
+      imgWrappRef.current &&
+      width &&
+      shift - width > -imgWrappRef.current.scrollWidth
+    )
       setShift((prev) => prev - width);
   };
 
@@ -25,7 +29,6 @@ export const Carousel = () => {
 
   useEffect(() => {
     if (imgWrappRef.current) {
-      console.dir(imgWrappRef.current);
       setWidth(imgWrappRef.current.offsetWidth);
     }
   }, []);
@@ -44,8 +47,6 @@ export const Carousel = () => {
           <img src={image} alt='' key={index} />
         ))}
       </div>
-      image width = {width} <br />
-      image shift = {shift}
       <button className='navigation next' onClick={handleNextImg}></button>
     </div>
   );
