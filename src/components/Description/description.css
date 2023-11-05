@@ -1,0 +1,24 @@
+.descriptioin-wrapp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  text-align: start;
+  padding-top: 20px;
+}
+.descriptioin-wrapp .name {
+  text-transform: uppercase;
+  color: var(--orange);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+.descriptioin-wrapp .title {
+  font-weight: bold;
+  font-size: 25px;
+}
+.descriptioin-wrapp .description {
+  color: var(--grayish-blue-dark-1);
+  font-size: 14.5px;
+  line-height: 25px;
+}/*# sourceMappingURL=description.css.map */

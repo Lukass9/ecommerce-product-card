@@ -1,0 +1,32 @@
+.carousel {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+.carousel .navigation {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+  top: calc(50% - 20px);
+  margin: 0 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+  z-index: 20;
+}
+.carousel .next {
+  right: 0;
+  background-image: url("src/assets/images/icon-next.svg");
+}
+.carousel .prev {
+  left: 0;
+  background-image: url("src/assets/images/icon-previous.svg");
+}
+.carousel .image-wrapp {
+  display: flex;
+  transform: translateX(0px);
+  transition: transform 0.3s ease-in-out;
+}/*# sourceMappingURL=carousel.css.map */

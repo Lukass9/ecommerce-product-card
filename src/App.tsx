@@ -4,7 +4,8 @@ import { Carousel } from "./components/Carousel/Carousel";
 import { Description } from "./components/Description/Description";
 import { Price } from "./components/Price/Price";
 import { Counter } from "./components/Counter/Counter";
-import { Submit } from "./components/Submit/Submit";
+import { Button } from "./components/Button/Button";
+import Cart from "src/assets/images/icon-cart.svg?react";
 
 function App() {
   return (
@@ -15,7 +16,10 @@ function App() {
         <Description />
         <Price />
         <Counter />
-        <Submit />
+        <Button>
+          <Cart />
+          <span>Add to cart</span>
+        </Button>
       </div>
     </>
   );

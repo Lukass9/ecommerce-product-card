@@ -1,6 +1,7 @@
-button{
+.btn{
     display: flex;
     height: 60px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     background-color: var(--orange);

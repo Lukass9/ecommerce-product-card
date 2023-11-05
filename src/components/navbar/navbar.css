@@ -1,0 +1,50 @@
+.wrapp-menu {
+  width: 100vw;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  padding: 0 20px;
+}
+.wrapp-menu div {
+  display: flex;
+  align-items: end;
+  gap: 20px;
+}
+.wrapp-menu div img {
+  height: 20px;
+}
+.wrapp-menu div .menu {
+  height: 15px;
+  z-index: 30;
+}
+.wrapp-menu div .logo {
+  height: 18px;
+}
+.wrapp-menu div .bg-dark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black-opacity);
+  z-index: 30;
+  transform: translateX(-100vw);
+}
+.wrapp-menu div .bg {
+  align-items: flex-start;
+  width: 70%;
+  height: 100vh;
+  background-color: var(--white);
+}
+.wrapp-menu div .bg ul {
+  text-align: start;
+  margin-top: 80px;
+}
+.wrapp-menu div .bg ul li {
+  font-size: 17px;
+  font-weight: bold;
+  padding: 13px 20px;
+}/*# sourceMappingURL=navbar.css.map */
