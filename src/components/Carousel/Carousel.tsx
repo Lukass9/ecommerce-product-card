@@ -1,14 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./carousel.scss";
 
-const images = [
-  "src/assets/images/image-product-1.jpg",
-  "src/assets/images/image-product-2.jpg",
-  "src/assets/images/image-product-3.jpg",
-  "src/assets/images/image-product-4.jpg",
-];
-
-export const Carousel = () => {
+export const Carousel = ({ images }: { images: string[] }) => {
   const [width, setWidth] = useState<null | number>(null);
   const [shift, setShift] = useState(0);
 

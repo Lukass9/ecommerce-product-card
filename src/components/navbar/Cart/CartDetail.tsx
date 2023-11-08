@@ -1,12 +1,6 @@
 import { Button } from "src/components/Button/Button";
 import Delete from "src/assets/images/icon-delete.svg?react";
-
-type Item = {
-  name: string;
-  img: string;
-  price: number;
-  quantity: number;
-};
+import { Item } from "src/types/type";
 
 export const CartDetail = ({ items }: { items: Item[] }) => {
   return (
@@ -16,7 +10,7 @@ export const CartDetail = ({ items }: { items: Item[] }) => {
       {items.length ? (
         <div className='cart-detail-wrap'>
           {items.map((item) => (
-            <div className='item-wrapp'>
+            <div key={item.name} className='item-wrapp'>
               <img src={item.img} alt='' />
               <div className='item-detail'>
                 <div className='item-name'>{item.name}</div>

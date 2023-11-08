@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 import "./counter.scss";
 
 const counterReducer = (
@@ -20,7 +20,11 @@ const counterReducer = (
   }
 };
 
-export const Counter = () => {
+type Props = {
+  handleUpdateCount: (count: number) => void;
+};
+
+export const Counter = ({ handleUpdateCount }: Props) => {
   const [count, dispatch] = useReducer(counterReducer, 0);
 
   const handleIncrement = () => {
@@ -31,6 +35,9 @@ export const Counter = () => {
     dispatch({ type: "DECREMENT" });
   };
 
+  useEffect(() => {
+    handleUpdateCount(count);
+  }, [count]);
   return (
     <div className='counter-wrapp'>
       <button className='minus' onClick={handleDecrement}>

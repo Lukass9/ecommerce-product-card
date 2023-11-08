@@ -1,18 +1,19 @@
 import "./description.scss";
 
-const data = {
-  name: "sneakers company",
-  tittle: "Fall Limited Edition Sneakers",
-  description:
-    "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-};
-
-export const Description = () => {
+export const Description = ({
+  name,
+  title,
+  description,
+}: {
+  name: string;
+  title: string;
+  description: string;
+}) => {
   return (
     <div className='descriptioin-wrapp'>
-      <h5 className='name'>{data.name}</h5>
-      <h1 className='title'>{data.tittle}</h1>
-      <p className='description'>{data.description}</p>
+      <h5 className='name'>{name}</h5>
+      <h1 className='title'>{title}</h1>
+      <p className='description'>{description}</p>
     </div>
   );
 };
