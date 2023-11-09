@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
-import { Cart } from "src/types/type";
+import { Cart, Item, Product } from "src/types/type";
+import { v4 as uuidv4 } from "uuid";
 
 const INITIAL_STATE: Cart = {
   items: [],
@@ -9,7 +10,16 @@ const INITIAL_STATE: Cart = {
 export const CartContext = createContext<{
   cart: Cart;
   setCart: React.Dispatch<React.SetStateAction<Cart>>;
-}>({ cart: INITIAL_STATE, setCart: () => {} });
+  handleAddProduct: (product: Product) => void;
+  handleDeleteProduct: (items: string) => void;
+  handleUpdateProduct: (items: string, product: Product) => void;
+}>({
+  cart: INITIAL_STATE,
+  setCart: () => {},
+  handleAddProduct: (product) => {},
+  handleDeleteProduct: (items) => {},
+  handleUpdateProduct: (name, product) => {},
+});
 
 export const CartContextProvider = ({
   children,
@@ -18,8 +28,49 @@ export const CartContextProvider = ({
 }) => {
   const [cart, setCart] = useState<Cart>(INITIAL_STATE);
 
+  const calculateTotal = (items: Item[]) => {
+    let total = 0;
+    items.forEach((el) => {
+      total += el.quantity;
+    });
+    setCart((prev) => ({ ...prev, total }));
+  };
+  const handleAddProduct = (product: Product) => {
+    const newProd = {
+      id: uuidv4(),
+      name: product.name,
+      img: product.images[0],
+      price: product.price,
+      quantity: product.count,
+    };
+    setCart((prev) => ({
+      ...prev,
+      items: [...prev.items, newProd],
+      total: prev.total + product.count,
+    }));
+  };
+  const handleDeleteProduct = (id: string) => {
+    const items = cart.items.filter((el) => el.id !== id);
+    setCart((prev) => ({ ...prev, items }));
+    calculateTotal(items);
+  };
+  const handleUpdateProduct = (name: string, product: Product) => {
+    const items = cart.items;
+    items[items.findIndex((el) => el.name === name)].quantity = product.count;
+
+    setCart((prev) => ({ ...prev, items }));
+    calculateTotal(items);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, setCart }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        setCart,
+        handleAddProduct,
+        handleDeleteProduct,
+        handleUpdateProduct,
+      }}>
       {children}
     </CartContext.Provider>
   );

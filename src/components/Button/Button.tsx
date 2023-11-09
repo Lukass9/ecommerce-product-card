@@ -9,21 +9,15 @@ type Props = {
 };
 
 export const Button = ({ children, product }: Props) => {
-  const { setCart } = useContext(CartContext);
+  const { handleAddProduct, handleUpdateProduct, cart } =
+    useContext(CartContext);
   return (
     <button
       onClick={() => {
-        const newProd = {
-          name: product?.name,
-          img: product?.images[0],
-          price: product?.price,
-          quantity: product?.count,
-        };
-        setCart((prev) => ({
-          ...prev,
-          items: [...prev.items, newProd],
-          total: product ? product.count : 0,
-        }));
+        product.count && handleAddProduct(product);
+
+        cart.items.find((el) => el.name === product.name) &&
+          handleUpdateProduct(product.name, product);
       }}
       className='btn'>
       {children}

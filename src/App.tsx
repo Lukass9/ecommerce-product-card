@@ -8,8 +8,9 @@ import { Button } from "./components/Button/Button";
 import Cart from "src/assets/images/icon-cart.svg?react";
 import { CartContextProvider } from "./context/CartContext";
 import { useState } from "react";
+import { Product } from "./types/type";
 
-const INITIAL_STATE = {
+const INITIAL_STATE: Product = {
   id: 1,
   name: "Fall Limited Edition Sneakers",
   title: "sneakers company",
