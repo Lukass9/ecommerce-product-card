@@ -12,10 +12,10 @@ export const Price = ({
   return (
     <div className='price-wrapp'>
       <div className='discount-wrapp'>
-        <div className='discount-price'>${price.toFixed(2)}</div>
+        <div className='discount-price'>${discountPrice.toFixed(2)}</div>
         <div className='discount'>{discount}%</div>
       </div>
-      <div className='price'>${discountPrice.toFixed(2)}</div>
+      <div className='price'>${price.toFixed(2)}</div>
     </div>
   );
 };

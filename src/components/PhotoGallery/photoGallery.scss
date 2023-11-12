@@ -1,0 +1,23 @@
+.wrap-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .img-wrap {
+        display: flex;
+        overflow: hidden;
+        width: 490px;
+    }
+
+    .img-thumb {
+        display: flex;
+        gap: 30px;
+        img {
+            width: 100px;
+        }
+    }
+
+    img {
+        border-radius: 15px;
+    }
+}

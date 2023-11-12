@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./carousel.scss";
+import { Images } from "src/types/type";
 
-export const Carousel = ({ images }: { images: string[] }) => {
+export const Carousel = ({ images }: { images: Images[] }) => {
   const [width, setWidth] = useState<null | number>(null);
   const [shift, setShift] = useState(0);
 
@@ -37,7 +38,7 @@ export const Carousel = ({ images }: { images: string[] }) => {
       <button className='navigation prev' onClick={handlePrevImg}></button>
       <div ref={imgWrappRef} className='image-wrapp'>
         {images.map((image, index) => (
-          <img src={image} alt='' key={index} />
+          <img src={image.img} alt='' key={index} />
         ))}
       </div>
       <button className='navigation next' onClick={handleNextImg}></button>

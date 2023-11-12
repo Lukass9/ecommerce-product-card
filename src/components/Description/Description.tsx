@@ -11,8 +11,8 @@ export const Description = ({
 }) => {
   return (
     <div className='descriptioin-wrapp'>
-      <h5 className='name'>{name}</h5>
-      <h1 className='title'>{title}</h1>
+      <h5 className='name'>{title}</h5>
+      <h1 className='title'>{name}</h1>
       <p className='description'>{description}</p>
     </div>
   );

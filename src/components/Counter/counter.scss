@@ -1,4 +1,6 @@
-.counter-wrapp{
+@import "/src/styles/media.scss";
+
+.counter-wrapp {
     display: flex;
     height: 60px;
     justify-content: space-between;
@@ -6,8 +8,9 @@
     background-color: var(--grayish-blue-light-1);
     border-radius: 10px;
     padding: 0 20px;
+    min-width: 30%;
 
-    button{
+    button {
         border: none;
         margin: 0;
         padding: 0;
@@ -17,8 +20,7 @@
         font-size: 30px;
         color: var(--orange);
     }
-    .count{
+    .count {
         font-weight: bold;
     }
-
 }

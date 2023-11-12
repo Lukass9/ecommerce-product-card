@@ -10,23 +10,16 @@ type Item = {
   quantity: number;
 };
 
-const items: Item[] = [
-  {
-    name: "Fall Limited Edition Sneakers",
-    img: "src/assets/images/image-product-1-thumbnail.jpg",
-    price: 125,
-    quantity: 3,
-  },
-];
-
 export const Cart = () => {
   const { cart } = useContext(CartContext);
 
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div className='cart-icon-wrap'>
-        <CartSVG onClick={() => setIsOpen((prev) => !prev)} />
+      <div
+        className='cart-icon-wrap'
+        onClick={() => setIsOpen((prev) => !prev)}>
+        <CartSVG />
         {cart.total ? <div className='total'>{cart.total}</div> : null}
       </div>
       {isOpen && <CartDetail items={cart.items} />}

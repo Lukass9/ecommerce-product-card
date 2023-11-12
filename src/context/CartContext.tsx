@@ -12,13 +12,13 @@ export const CartContext = createContext<{
   setCart: React.Dispatch<React.SetStateAction<Cart>>;
   handleAddProduct: (product: Product) => void;
   handleDeleteProduct: (items: string) => void;
-  handleUpdateProduct: (items: string, product: Product) => void;
+  handleUpdateProduct: (product: Product) => void;
 }>({
   cart: INITIAL_STATE,
   setCart: () => {},
   handleAddProduct: (product) => {},
   handleDeleteProduct: (items) => {},
-  handleUpdateProduct: (name, product) => {},
+  handleUpdateProduct: (product) => {},
 });
 
 export const CartContextProvider = ({
@@ -36,7 +36,7 @@ export const CartContextProvider = ({
     setCart((prev) => ({ ...prev, total }));
   };
   const handleAddProduct = (product: Product) => {
-    const newProd = {
+    const newProd: Item = {
       id: uuidv4(),
       name: product.name,
       img: product.images[0],
@@ -54,9 +54,10 @@ export const CartContextProvider = ({
     setCart((prev) => ({ ...prev, items }));
     calculateTotal(items);
   };
-  const handleUpdateProduct = (name: string, product: Product) => {
+  const handleUpdateProduct = (product: Product) => {
     const items = cart.items;
-    items[items.findIndex((el) => el.name === name)].quantity = product.count;
+    items[items.findIndex((el) => el.name === product.name)].quantity =
+      product.count;
 
     setCart((prev) => ({ ...prev, items }));
     calculateTotal(items);

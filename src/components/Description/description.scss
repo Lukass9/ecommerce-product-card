@@ -1,4 +1,6 @@
-.descriptioin-wrapp{
+@import "/src/styles/media.scss";
+
+.descriptioin-wrapp {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -6,7 +8,7 @@
     text-align: start;
     padding-top: 20px;
 
-    .name{
+    .name {
         text-transform: uppercase;
         color: var(--orange);
         font-size: 11px;
@@ -14,14 +16,16 @@
         font-weight: bold;
     }
 
-    .title{
+    .title {
         font-weight: bold;
         font-size: 25px;
+        @include desktop {
+            font-size: 45px;
+        }
     }
-    .description{
+    .description {
         color: var(--grayish-blue-dark-1);
         font-size: 14.5px;
         line-height: 25px;
     }
-
 }

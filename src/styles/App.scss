@@ -1,13 +1,37 @@
-@import "src/styles/vars.css";
+@import "/src/styles/vars.css";
+@import "/src/styles/media.scss";
 #root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   text-align: center;
 }
-.wrapp{
+.wrap-content {
   display: flex;
   flex-direction: column;
-  position: relative;
-  padding: 0 20px;
-  gap: 20px;
+  @include desktop {
+    flex-direction: row;
+    height: calc(100vh - 70px);
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .wrap-description {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 20px;
+    gap: 20px;
+    @include desktop {
+      width: 40%;
+    }
+  }
+  .wrap-button {
+    display: flex;
+    flex-direction: column;
+    @include desktop {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
 }
-

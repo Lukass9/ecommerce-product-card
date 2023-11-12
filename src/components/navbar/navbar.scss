@@ -1,4 +1,6 @@
-.wrapp-menu{
+@import "/src/styles/media.scss";
+
+.wrapp-menu {
     width: 100vw;
     height: 70px;
     display: flex;
@@ -7,12 +9,30 @@
     align-items: center;
     background-color: var(--white);
     padding: 0 20px;
-    div{
+
+    @include desktop {
+        width: 1550px;
+        border-bottom: 1px solid var(--grayish-blue-light-2);
+    }
+
+    div {
         display: flex;
         align-items: end;
         gap: 20px;
+        align-items: center;
 
-        .toggle{
+        @include desktop {
+            ul {
+                display: flex;
+                margin-left: 50px;
+                gap: 40px;
+                cursor: pointer;
+                color: var(--grayish-blue-dark-1);
+                font-size: 18px;
+            }
+        }
+
+        .toggle {
             -webkit-appearance: none;
             border-radius: 0;
             text-align: inherit;
@@ -26,18 +46,24 @@
             height: fit-content;
             z-index: 30;
         }
-        img{
-            height: 20px
+        @include desktop {
+            .avatar {
+                height: 40px;
+            }
         }
-        .menu{
+        img {
+            height: 20px;
+        }
+        .menu {
             height: 15px;
             z-index: 30;
         }
-        .logo{
+        .logo {
             height: 18px;
+            cursor: default;
         }
 
-        .bg-dark{
+        .bg-dark {
             position: fixed;
             top: 0;
             left: 0;
@@ -46,16 +72,16 @@
             background-color: var(--black-opacity);
             z-index: 30;
         }
-        .bg{
+        .bg {
             align-items: flex-start;
             width: 70%;
             height: 100vh;
             background-color: var(--white);
-            
-            ul{
+
+            ul {
                 text-align: start;
                 margin-top: 80px;
-                li{
+                li {
                     font-size: 17px;
                     font-weight: bold;
                     padding: 13px 20px;
@@ -63,9 +89,10 @@
             }
         }
 
-        .cart-icon-wrap{
+        .cart-icon-wrap {
             position: relative;
-            .total{
+            cursor: pointer;
+            .total {
                 font-size: 12px;
                 background-color: var(--orange);
                 color: var(--white);
@@ -77,8 +104,8 @@
             }
         }
 
-        //cart 
-        .cart-wrap{
+        //cart
+        .cart-wrap {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -92,46 +119,56 @@
             max-height: 330px;
             background: var(--white);
             z-index: 21;
-            overflow-y: scroll;
+            overflow-y: auto;
             overflow-x: hidden;
-            hr{
+            box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+
+            @include desktop {
+                width: 450px;
+                left: auto;
+                right: 10%;
+            }
+            hr {
                 position: relative;
                 width: calc(100% + 40px);
                 right: 20px;
                 border-top: 1px solid var(--grayish-blue-light-2);
             }
-            
-            .cart-detail-wrap{
+
+            .cart-detail-wrap {
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
                 flex-direction: column;
-                flex:1;
+                flex: 1;
                 width: 100%;
                 .item-wrapp {
-                   line-height: 10px;
-                   width: 100%;
-                   justify-content: space-between;
-                   align-items: center;
-                   color: var(--grayish-blue-dark-1);
-                    img{
+                    line-height: 10px;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+                    color: var(--grayish-blue-dark-1);
+                    .item-center {
+                        align-items: center;
+                    }
+                    img {
                         height: 55px;
                         border-radius: 5px;
                     }
-                    .item-detail{
+                    .item-detail {
                         display: flex;
                         flex-direction: column;
                         align-items: flex-start;
-                        .item-price{
+                        .item-price {
                             gap: 5px;
-                            b{
+                            b {
                                 color: var(--black);
                             }
                         }
                     }
                 }
             }
-            .center{
+            .center {
                 justify-content: center;
             }
         }

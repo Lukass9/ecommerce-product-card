@@ -14,14 +14,17 @@ export const CartDetail = ({ items }: { items: Item[] }) => {
         <div className='cart-detail-wrap'>
           {items.map((item) => (
             <div key={item.id} className='item-wrapp'>
-              <img src={item.img} alt='' />
-              <div className='item-detail'>
-                <div className='item-name'>{item.name}</div>
-                <div className='item-price'>
-                  ${item.price} x {item.quantity}
-                  <b>${item.price * item.quantity}</b>
+              <div className='item-center'>
+                <img src={item.img.img} alt='' />
+                <div className='item-detail'>
+                  <div className='item-name'>{item.name}</div>
+                  <div className='item-price'>
+                    ${item.price} x {item.quantity}
+                    <b>${item.price * item.quantity}</b>
+                  </div>
                 </div>
               </div>
+
               <Delete onClick={() => handleDeleteProduct(item.id)} />
             </div>
           ))}

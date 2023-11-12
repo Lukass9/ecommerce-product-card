@@ -15,9 +15,9 @@ export const Button = ({ children, product }: Props) => {
     <button
       onClick={() => {
         product.count && handleAddProduct(product);
-
         cart.items.find((el) => el.name === product.name) &&
-          handleUpdateProduct(product.name, product);
+          product.count &&
+          handleUpdateProduct(product);
       }}
       className='btn'>
       {children}
