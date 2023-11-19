@@ -59,7 +59,7 @@ export const Sidebar = () => {
           <Links isOpen={isOpen} />
         </motion.div>
       </motion.div>
-      <ToggleBar setIsOpen={setIsOpen} />
+      <ToggleBar isOpen={isOpen} setIsOpen={setIsOpen} />
     </>
   );
 };

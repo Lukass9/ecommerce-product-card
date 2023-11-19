@@ -1,6 +1,8 @@
 @import "/src/styles/media.scss";
 
 .wrapp-menu {
+    position: sticky;
+    top: 0;
     width: 100vw;
     height: 70px;
     display: flex;
@@ -9,6 +11,8 @@
     align-items: center;
     background-color: var(--white);
     padding: 0 20px;
+    user-select: none;
+    z-index: 100;
 
     @include desktop {
         width: 1550px;
@@ -49,6 +53,22 @@
         @include desktop {
             .avatar {
                 height: 40px;
+                :hover {
+                    border: 2px solid var(--orange);
+                }
+
+                img {
+                    transition: border 0.3s ease-in-out;
+                    height: 100%;
+                    border-radius: 100%;
+                    border: 2px solid transparent;
+                }
+            }
+            li {
+                display: flex;
+                height: 70px;
+                align-items: center;
+                border-bottom: 3px solid transparent;
             }
         }
         img {
@@ -163,6 +183,13 @@
                             gap: 5px;
                             b {
                                 color: var(--black);
+                            }
+                        }
+                    }
+                    .delete {
+                        &:hover {
+                            use {
+                                fill: var(--grayish-blue-dark-1);
                             }
                         }
                     }

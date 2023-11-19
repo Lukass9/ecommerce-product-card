@@ -2,13 +2,8 @@ import CartSVG from "src/assets/images/icon-cart.svg?react";
 import { CartDetail } from "./CartDetail";
 import { useState, useContext } from "react";
 import { CartContext } from "src/context/CartContext";
-
-type Item = {
-  name: string;
-  img: string;
-  price: number;
-  quantity: number;
-};
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export const Cart = () => {
   const { cart } = useContext(CartContext);
@@ -20,9 +15,20 @@ export const Cart = () => {
         className='cart-icon-wrap'
         onClick={() => setIsOpen((prev) => !prev)}>
         <CartSVG />
-        {cart.total ? <div className='total'>{cart.total}</div> : null}
+        {cart.total ? (
+          <motion.div
+            className='total'
+            key={cart.total}
+            initial={{ scale: 0.3 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", bounce: 0.75 }}>
+            {cart.total}
+          </motion.div>
+        ) : null}
       </div>
-      {isOpen && <CartDetail items={cart.items} />}
+      <AnimatePresence>
+        {isOpen && <CartDetail items={cart.items} />}
+      </AnimatePresence>
     </>
   );
 };

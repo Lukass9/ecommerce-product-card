@@ -42,3 +42,9 @@ svg,
 img {
   cursor: pointer;
 }
+
+@media (min-width: 1440px) {
+  button:hover {
+    opacity: 0.5;
+  }
+}

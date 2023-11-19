@@ -6,8 +6,14 @@ import { Price } from "../Price/Price";
 import { Counter } from "../Counter/Counter";
 import { Button } from "../Button/Button";
 import Cart from "src/assets/images/icon-cart.svg?react";
+import Cart1 from "src/assets/images/icon-cart.svg";
 import useWindowDimensions from "src/hook/useWindowsDimensions";
 import { Product } from "src/types/type";
+import { Modal } from "../Modal/Modal";
+import { createPortal } from "react-dom";
+import { motion } from "framer-motion";
+
+const modal = document.getElementById("modal");
 
 const INITIAL_STATE: Product = {
   id: 1,
@@ -45,19 +51,24 @@ const INITIAL_STATE: Product = {
 
 export const ProductCart = () => {
   const [product, setProduct] = useState(INITIAL_STATE);
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const handleUpdateCount = (count: number) => {
     setProduct((prev) => ({ ...prev, count }));
   };
   const { width } = useWindowDimensions();
   const isMobile = width <= 768;
+  console.log(Cart);
   return (
     <div className='wrap-content'>
       {isMobile ? (
         <Carousel images={product.images} />
       ) : (
-        <PhotoGallery images={product.images} />
+        <PhotoGallery
+          images={product.images}
+          isModal={false}
+          setIsOpenModal={setIsOpenModal}
+        />
       )}
-
       <div className='wrap-description'>
         <Description
           name={product.name}
@@ -77,6 +88,13 @@ export const ProductCart = () => {
           </Button>
         </div>
       </div>
+
+      {isOpenModal &&
+        modal &&
+        createPortal(
+          <Modal images={product.images} setIsOpenModal={setIsOpenModal} />,
+          modal
+        )}
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useReducer, useEffect } from "react";
+import { motion } from "framer-motion";
 import "./counter.scss";
 
 const counterReducer = (
@@ -40,13 +41,27 @@ export const Counter = ({ handleUpdateCount }: Props) => {
   }, [count]);
   return (
     <div className='counter-wrapp'>
-      <button className='minus' onClick={handleDecrement}>
+      <motion.button
+        className='minus'
+        onClick={handleDecrement}
+        whileTap={{ scale: 0.9 }}
+        whileHover={{ scale: 1.1 }}>
         -
-      </button>
-      <div className='count'>{count}</div>
-      <button className='plus' onClick={handleIncrement}>
+      </motion.button>
+      <motion.div
+        className='count'
+        key={count}
+        initial={{ scale: 1.5 }}
+        animate={{ scale: 1 }}>
+        {count}
+      </motion.div>
+      <motion.button
+        className='plus'
+        onClick={handleIncrement}
+        whileTap={{ scale: 0.9 }}
+        whileHover={{ scale: 1.1 }}>
         +
-      </button>
+      </motion.button>
     </div>
   );
 };

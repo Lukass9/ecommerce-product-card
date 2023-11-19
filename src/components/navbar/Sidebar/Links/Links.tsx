@@ -1,5 +1,6 @@
 const links = ["Collections", "Men", "Women", "About", "Contact"];
 import { motion } from "framer-motion";
+import useWindowDimensions from "src/hook/useWindowsDimensions";
 
 const showLinks = {
   open: {
@@ -31,6 +32,8 @@ type Links = {
 };
 
 export const Links = ({ isOpen }: Links) => {
+  const { width } = useWindowDimensions();
+  const isDesktop = width > 1440;
   return (
     <motion.ul
       initial='closed'
@@ -39,8 +42,14 @@ export const Links = ({ isOpen }: Links) => {
       {links.map((link) => (
         <motion.li
           variants={itemVariants}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={
+            isDesktop ? { borderBottom: "3px solid orange" } : { scale: 1.1 }
+          }
+          whileTap={
+            isDesktop
+              ? { scale: 0.95, borderBottom: "10px solid orange" }
+              : { scale: 0.95 }
+          }
           key={link}>
           {link}
         </motion.li>

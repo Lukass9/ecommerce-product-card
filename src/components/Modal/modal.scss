@@ -1,0 +1,26 @@
+@import "src/styles/App.scss";
+.modal-background {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black-opacity);
+    z-index: 50;
+
+    .close {
+        position: absolute;
+        top: 5%;
+        left: calc(50% + 275px);
+        @include resetButton;
+        path {
+            fill: var(--white);
+        }
+        &:hover {
+            path {
+                fill: var(--orange);
+            }
+        }
+    }
+}

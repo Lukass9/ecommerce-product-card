@@ -8,8 +8,8 @@ import { Links } from "./Sidebar/Links/Links";
 
 export const Navbar = () => {
   const { width } = useWindowDimensions();
-  const isMobile = width <= 768;
-  const isDesktop = width > 768;
+  const isMobile = width <= 1440;
+  const isDesktop = width > 1440;
   return (
     <div className='wrapp-menu'>
       <div>
@@ -19,7 +19,9 @@ export const Navbar = () => {
       </div>
       <div>
         <Cart />
-        <img className='avatar' src={avatar} alt='avatar' />
+        <div className='avatar'>
+          <img src={avatar} alt='avatar' />
+        </div>
       </div>
     </div>
   );
