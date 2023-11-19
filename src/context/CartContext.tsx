@@ -40,7 +40,7 @@ export const CartContextProvider = ({
       id: uuidv4(),
       name: product.name,
       img: product.images[0],
-      price: product.price,
+      price: product.discountPrice,
       quantity: product.count,
     };
     setCart((prev) => ({
