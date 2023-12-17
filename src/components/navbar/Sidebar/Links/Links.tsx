@@ -1,6 +1,6 @@
 const links = ["Collections", "Men", "Women", "About", "Contact"];
 import { motion } from "framer-motion";
-import useWindowDimensions from "src/hook/useWindowsDimensions";
+import { useWindowDimensions } from "src/hook/useWindowsDimensions";
 
 const showLinks = {
   open: {

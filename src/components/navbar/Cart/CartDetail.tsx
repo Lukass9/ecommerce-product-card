@@ -39,10 +39,12 @@ export const CartDetail = ({ items }: Props) => {
                 </div>
               </div>
 
-              <Delete
-                className='delete'
-                onClick={() => handleDeleteProduct(item.id)}
-              />
+              <button
+                aria-label='trash'
+                className='resetButton'
+                onClick={() => handleDeleteProduct(item.id)}>
+                <Delete className='delete' />
+              </button>
             </div>
           ))}
           <motion.button className='btn' whileTap={{ scale: 0.9 }}>

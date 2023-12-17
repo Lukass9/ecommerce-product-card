@@ -10,8 +10,8 @@
     z-index: 50;
 
     .close {
-        position: absolute;
         top: 5%;
+        position: absolute;
         left: calc(50% + 275px);
         @include resetButton;
         path {

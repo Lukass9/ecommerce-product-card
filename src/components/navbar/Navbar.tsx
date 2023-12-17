@@ -3,7 +3,7 @@ import avatar from "src/assets/images/image-avatar.png";
 import "./navbar.scss";
 import { Sidebar } from "./Sidebar/Sidebar";
 import { Cart } from "./Cart/Cart";
-import useWindowDimensions from "src/hook/useWindowsDimensions";
+import { useWindowDimensions } from "src/hook/useWindowsDimensions";
 import { Links } from "./Sidebar/Links/Links";
 
 export const Navbar = () => {

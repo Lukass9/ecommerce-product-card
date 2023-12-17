@@ -51,3 +51,7 @@
     opacity: 1;
   }
 }
+
+.resetButton {
+  @include resetButton();
+}

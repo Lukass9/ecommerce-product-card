@@ -1,17 +1,15 @@
 import { useState } from "react";
-import { Carousel } from "../Carousel/Carousel";
-import { PhotoGallery } from "../PhotoGallery/PhotoGallery";
-import { Description } from "../Description/Description";
-import { Price } from "../Price/Price";
-import { Counter } from "../Counter/Counter";
-import { Button } from "../Button/Button";
-import Cart from "src/assets/images/icon-cart.svg?react";
-import Cart1 from "src/assets/images/icon-cart.svg";
-import useWindowDimensions from "src/hook/useWindowsDimensions";
-import { Product } from "src/types/type";
-import { Modal } from "../Modal/Modal";
 import { createPortal } from "react-dom";
-import { motion } from "framer-motion";
+import Cart from "src/assets/images/icon-cart.svg?react";
+import { useWindowDimensions } from "src/hook/useWindowsDimensions";
+import { Product } from "src/types/type";
+import { Button } from "../Button/Button";
+import { Carousel } from "../Carousel/Carousel";
+import { Counter } from "../Counter/Counter";
+import { Description } from "../Description/Description";
+import { Modal } from "../Modal/Modal";
+import { PhotoGallery } from "../PhotoGallery/PhotoGallery";
+import { Price } from "../Price/Price";
 
 const modal = document.getElementById("modal");
 

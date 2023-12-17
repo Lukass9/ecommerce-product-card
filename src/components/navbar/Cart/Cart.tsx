@@ -11,7 +11,8 @@ export const Cart = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div
+      <button
+        aria-label='cart'
         className='cart-icon-wrap'
         onClick={() => setIsOpen((prev) => !prev)}>
         <CartSVG />
@@ -25,7 +26,7 @@ export const Cart = () => {
             {cart.total}
           </motion.div>
         ) : null}
-      </div>
+      </button>
       <AnimatePresence>
         {isOpen && <CartDetail items={cart.items} />}
       </AnimatePresence>
