@@ -1,7 +1,7 @@
 # E-commerce Product Page
 
 > An e-commerce application enabling browsing, selection, and purchase of products through an interactive image gallery, adding products to the cart, managing the cart content, and providing a responsive layout that adapts to various devices.
-> Live demo [_here_](https://www.example.com).
+> Live demo [_here_](https://Lukass9.github.io/ecommerce-product-card).
 
 ## Table of Contents
 
@@ -51,51 +51,6 @@
 
 Dependencies and their versions are defined in the package.json file:
 
-```json
-{
-  "name": "ecommerce-product-card",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "host": "vite --host",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "test": "vitest"
-  },
-  "dependencies": {
-    "framer-motion": "^10.16.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "sass": "^1.69.5",
-    "uuidv4": "^6.2.13"
-  },
-  "devDependencies": {
-    "@testing-library/dom": "^9.3.3",
-    "@testing-library/jest-dom": "^6.1.4",
-    "@testing-library/react": "^14.1.2",
-    "@testing-library/user-event": "^14.5.1",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@vitejs/plugin-react": "^4.0.3",
-    "@vitest/browser": "^0.34.6",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "jsdom": "^22.1.0",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vite-plugin-svgr": "^4.1.0",
-    "vitest": "^0.34.6",
-    "webdriverio": "^8.24.3"
-  }
-}
-```
-
 ## Local Installation and Running
 
 1. **Cloning the Source Code**
@@ -110,14 +65,14 @@ Dependencies and their versions are defined in the package.json file:
 
 ```bash
 cd nazwa_folderu_projektu
-npm install  # lub yarn install, jeśli używasz Yarn
+npm install  # or yarn install, if you use Yarn
 ```
 
 3. **Running the Project**
    After installing dependencies, start the application:
 
 ```bash
-npm run dev  # lub yarn run dev, jeśli używasz Yarn
+npm run dev  # or yarn run dev, if you use Yarn
 ```
 
 This will run the application in development mode. Open a web browser and go to http://localhost:5173/ to see the application in action.

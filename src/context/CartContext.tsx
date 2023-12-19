@@ -16,9 +16,9 @@ export const CartContext = createContext<{
 }>({
   cart: INITIAL_STATE,
   setCart: () => {},
-  handleAddProduct: (product) => {},
-  handleDeleteProduct: (items) => {},
-  handleUpdateProduct: (product) => {},
+  handleAddProduct: () => {},
+  handleDeleteProduct: () => {},
+  handleUpdateProduct: () => {},
 });
 
 export const CartContextProvider = ({

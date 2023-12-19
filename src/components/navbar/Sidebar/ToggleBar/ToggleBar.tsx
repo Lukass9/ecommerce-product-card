@@ -1,6 +1,5 @@
-import React, { Dispatch } from "react";
-import menu from "src/assets/images/icon-menu.svg";
 import close from "src/assets/images/icon-close.svg";
+import menu from "src/assets/images/icon-menu.svg";
 
 type Toggle = {
   isOpen: boolean;

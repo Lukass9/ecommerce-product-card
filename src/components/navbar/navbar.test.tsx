@@ -1,9 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, it, expect, vi } from "vitest";
+import { describe, expect, it } from "vitest";
 import { Navbar } from "./Navbar.tsx";
-import { Counter } from "../Counter/Counter.tsx";
-import { Button } from "../Button/Button.tsx";
-import { Product } from "src/types/type.tsx";
 
 describe("Navbar", () => {
   it("renders list items for navigation", () => {
