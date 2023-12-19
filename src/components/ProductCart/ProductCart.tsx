@@ -10,6 +10,14 @@ import { Description } from "../Description/Description";
 import { Modal } from "../Modal/Modal";
 import { PhotoGallery } from "../PhotoGallery/PhotoGallery";
 import { Price } from "../Price/Price";
+import image1 from "src/assets/images/image-product-1.jpg";
+import image2 from "src/assets/images/image-product-2.jpg";
+import image3 from "src/assets/images/image-product-3.jpg";
+import image4 from "src/assets/images/image-product-4.jpg";
+import imageThunb1 from "src/assets/images/image-product-1-thumbnail.jpg";
+import imageThunb2 from "src/assets/images/image-product-2-thumbnail.jpg";
+import imageThunb3 from "src/assets/images/image-product-3-thumbnail.jpg";
+import imageThunb4 from "src/assets/images/image-product-4-thumbnail.jpg";
 
 const modal = document.getElementById("modal");
 
@@ -25,23 +33,23 @@ const INITIAL_STATE: Product = {
   images: [
     {
       id: 0,
-      img: "src/assets/images/image-product-1.jpg",
-      thumb: "src/assets/images/image-product-1-thumbnail.jpg", // Dodaj rozszerzenie pliku miniatury
+      img: image1,
+      thumb: imageThunb1,
     },
     {
       id: 1,
-      img: "src/assets/images/image-product-2.jpg",
-      thumb: "src/assets/images/image-product-2-thumbnail.jpg",
+      img: image2,
+      thumb: imageThunb2,
     },
     {
       id: 2,
-      img: "src/assets/images/image-product-3.jpg",
-      thumb: "src/assets/images/image-product-3-thumbnail.jpg",
+      img: image3,
+      thumb: imageThunb3,
     },
     {
       id: 3,
-      img: "src/assets/images/image-product-4.jpg",
-      thumb: "src/assets/images/image-product-4-thumbnail.jpg",
+      img: image4,
+      thumb: imageThunb4,
     },
   ],
   count: 0,
